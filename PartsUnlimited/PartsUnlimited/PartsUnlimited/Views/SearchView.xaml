@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PartsUnlimited.Views.SearchView" Title="Search" BackgroundColor="White">
   <StackLayout>
-    <SearchBar Text="{Binding SearchText}" BackgroundColor="Gray" />
+    <SearchBar Text="{Binding SearchText}" BackgroundColor="Silver" />
     <ListView ItemsSource="{Binding Items}">
       <ListView.ItemTemplate>
         <DataTemplate>

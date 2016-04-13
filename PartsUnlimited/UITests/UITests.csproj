@@ -61,5 +61,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartsUnlimited\PartsUnlimited.Droid\PartsUnlimited.Droid.csproj">
+      <Project>{e393237e-4920-4aa9-b8f9-1264fbfe9cd1}</Project>
+      <Name>PartsUnlimited.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
