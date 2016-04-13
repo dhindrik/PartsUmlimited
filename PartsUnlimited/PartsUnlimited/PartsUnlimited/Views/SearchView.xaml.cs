@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartsUnlimited.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace PartsUnlimited.Views
         public SearchView()
         {
             InitializeComponent();
+
+            BindingContext = new SearchViewModel();
         }
     }
 }

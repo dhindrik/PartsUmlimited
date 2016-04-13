@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PartsUnlimited.Views.SearchView" Title="Search">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="PartsUnlimited.Views.SearchView" Title="Search" BackgroundColor="White">
+  <StackLayout>
+    <SearchBar Text="{Binding SearchText}" BackgroundColor="Gray" />
+    <ListView ItemsSource="{Binding Items}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ContentView Padding="10">
+                <Label FontSize="Medium" TextColor="Black" Text="{Binding }" />
+             </ContentView>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
 </ContentPage>
