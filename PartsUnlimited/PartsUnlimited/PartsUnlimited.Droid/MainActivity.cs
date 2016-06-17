@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace PartsUnlimited.Droid
 {
-    [Activity(Label = "PartsUnlimited", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "PartsUnlimited", Icon = "@drawable/sogeti", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)

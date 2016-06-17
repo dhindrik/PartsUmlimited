@@ -15,7 +15,7 @@ namespace PartsUnlimited.Views
         {
             InitializeComponent();
 
-            BindingContext = new SearchViewModel();
+            //BindingContext = new SearchViewModel();
         }
     }
 }
