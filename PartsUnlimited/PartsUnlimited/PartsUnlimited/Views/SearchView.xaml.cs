@@ -11,11 +11,19 @@ namespace PartsUnlimited.Views
 {
     public partial class SearchView : ContentPage
     {
+        public SearchViewModel ViewModel { get { return BindingContext as SearchViewModel; } }
         public SearchView()
         {
             InitializeComponent();
 
-            //BindingContext = new SearchViewModel();
+            NavigationPage.SetBackButtonTitle(this, "");
+
+            ViewModel.Navigation = Navigation;
+        }
+
+        public void Product_Selected(object sender, EventArgs e)
+        {
+            List.SelectedItem = null;
         }
     }
 }

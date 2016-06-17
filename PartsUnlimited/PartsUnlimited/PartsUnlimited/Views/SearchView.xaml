@@ -2,23 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:PartsUnlimited.ViewModels;assembly=PartsUnlimited"
-             x:Class="PartsUnlimited.Views.SearchView" Title="Search" BackgroundColor="White">
+             x:Class="PartsUnlimited.Views.SearchView" Title="Search" BackgroundColor="White" Icon="search.png">
   <ContentPage.BindingContext>
     <vm:SearchViewModel />
   </ContentPage.BindingContext>
     
     <StackLayout>
-    <SearchBar Text="{Binding SearchText}" BackgroundColor="Silver" />
-    <ListView ItemsSource="{Binding Items}">
+    <SearchBar Text="{Binding SearchText}" BackgroundColor="White" />
+    <ListView x:Name="List" ItemsSource="{Binding Items}" ItemSelected="Product_Selected" HasUnevenRows="True" CachingStrategy="RecycleElement">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <ContentView Padding="10">
-                <Label FontSize="Medium" TextColor="Black" Text="{Binding }" />
-             </ContentView>
+            <Grid HorizontalOptions="Fill" ColumnSpacing="10" Padding="10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="40" />
+              </Grid.ColumnDefinitions>
+                <Image WidthRequest="40" Aspect="AspectFill" HeightRequest="40" Source="{Binding Image}" />
+                <Label Grid.Column="1" FontSize="Medium" TextColor="Black" Text="{Binding Title}" VerticalOptions="Center" />
+                <Label Grid.Column="2" FontSize="Medium" TextColor="Black" Text="{Binding Price, StringFormat='${0}'}" VerticalOptions="Center" HorizontalOptions="End" />
+                 <Button Grid.Column="3" Text="Buy" HorizontalOptions="End" Command="{Binding Buy}" CommandParameter="{Binding }" />
+             </Grid>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+ 
+
+  <style name="Sogeti" parent="android:Theme.Holo.Light">
+    <item name="android:actionBarStyle">@style/ActionBar</item>
+    <item name="android:actionBarTabTextStyle">@style/ActionBarTabsText</item>
+    <item name="android:actionBarTabStyle">@style/ActionBarTabs</item>
+    <item name="android:actionMenuTextColor">#FFFFFF</item>
+    <!--<item name="android:homeAsUpIndicator">@drawable/back</item>-->
+
+    <!--<item name="android:actionModeBackground">@color/primary</item>-->
+
+    <!--<item name="android:actionModeCloseDrawable">@drawable/ic_arrow_back</item>-->
+  </style>
+
+
+
+  <style name="ActionBarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textColor">#FFFFFF</item>
+  </style>
+  <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:background">#EE5F56</item>
+    <item name="android:backgroundStacked">#FFFFFF</item>
+    <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+  </style>
+  <style name="ActionBarTabsText"
+         parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
+    <item name="android:textColor">#A5A5A5</item>
+    <item name="android:textSize">12dp</item>
+  </style>
+
+  <style name="ActionBarTabs" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+    <!--<item name="android:background">@drawable/tab_indicator_ab_infobric</item>-->
+    <item name="android:paddingLeft">0dp</item>
+    <item name="android:paddingRight">0dp</item>
+  </style>
+
+</resources>

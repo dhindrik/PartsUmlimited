@@ -6,10 +6,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics.Drawables;
 
 namespace PartsUnlimited.Droid
 {
-    [Activity(Label = "PartsUnlimited", Icon = "@drawable/sogeti", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Parts Unlimited", Icon = "@drawable/sogeti", Theme ="@style/Sogeti", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -18,6 +19,11 @@ namespace PartsUnlimited.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            
+            Xamarin.FormsMaps.Init(this, bundle);
+
+            ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
         }
     }
 }

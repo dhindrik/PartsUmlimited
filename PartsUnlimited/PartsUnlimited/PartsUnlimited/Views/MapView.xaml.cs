@@ -8,11 +8,13 @@ using Xamarin.Forms;
 
 namespace PartsUnlimited.Views
 {
-    public partial class CategoryView : ContentPage
+    public partial class MapView : ContentPage
     {
-        public CategoryView()
+        public MapView()
         {
             InitializeComponent();
+
+            NavigationPage.SetBackButtonTitle(this, "");
         }
     }
 }

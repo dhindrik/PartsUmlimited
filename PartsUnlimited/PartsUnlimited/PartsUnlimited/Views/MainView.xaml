@@ -3,7 +3,5 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:PartsUnlimited.Views;assembly=PartsUnlimited"
              x:Class="PartsUnlimited.Views.MainView" Title="Parts Unlimited">
-  <local:SearchView Icon="search.png" />
-  <local:CategoryView Icon="categories.png" />
-  <local:CartView Icon="cart.png" />
+  
 </TabbedPage>
