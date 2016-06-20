@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>PartsUnlimited</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.PartsUnlimited</string>
+	<string>sogeti.demo.partsunlimited</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -36,5 +36,7 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
 	<string></string>
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>We need your position</string>
 </dict>
 </plist>

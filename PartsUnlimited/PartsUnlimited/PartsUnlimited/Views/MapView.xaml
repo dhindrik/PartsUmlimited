@@ -4,6 +4,6 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="PartsUnlimited.Views.MapView" Title="Stores">
   <ContentView>
-    <maps:Map VerticalOptions="Fill" HorizontalOptions="Fill" />
+    <maps:Map x:Name="Map" VerticalOptions="Fill" HorizontalOptions="Fill" />
   </ContentView>
 </ContentPage>

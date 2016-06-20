@@ -16,6 +16,21 @@ namespace PartsUnlimited.Views
         public CartView()
         {
             InitializeComponent();
+
+            var button = new ToolbarItem()
+            {
+                Text = "Clear",
+
+            };
+
+            button.Clicked += Button_Clicked;
+
+            ToolbarItems.Add(button);
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            throw new Exception("You can not clear cart, you need to buy this!");
         }
 
         protected async override void OnAppearing()
