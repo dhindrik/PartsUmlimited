@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Graphics.Drawables;
+using Xamarin.Forms;
+using Plugin.Toasts;
 
 namespace PartsUnlimited.Droid
 {
@@ -20,7 +22,9 @@ namespace PartsUnlimited.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
-            
+            DependencyService.Register<ToastNotificatorImplementation>();
+            ToastNotificatorImplementation.Init(this);
+
             Xamarin.FormsMaps.Init(this, bundle);
 
             ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));

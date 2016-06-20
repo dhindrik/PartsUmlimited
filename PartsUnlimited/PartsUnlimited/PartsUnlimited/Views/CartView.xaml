@@ -1,6 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PartsUnlimited.ViewModels;assembly=PartsUnlimited"
              x:Class="PartsUnlimited.Views.CartView" Title="Cart" Icon="cart.png">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.BindingContext>
+    <vm:CartViewModel />
+  </ContentPage.BindingContext>
+  <StackLayout Padding="10">
+    <StackLayout HorizontalOptions="Fill" Orientation="Horizontal">
+      <Label Text="Total:" />
+      <Label Text="{Binding Total, StringFormat='${0}'}" FontAttributes="Bold" HorizontalOptions="End" />
+    </StackLayout>
+    <ListView x:Name="List" HasUnevenRows="True" ItemsSource="{Binding Products}" ItemSelected="Product_Selected">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid HorizontalOptions="Fill" ColumnSpacing="10" Padding="10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="60" />
+              </Grid.ColumnDefinitions>
+              <Image WidthRequest="40" Aspect="AspectFill" HeightRequest="40" Source="{Binding Image}" />
+              <Label Grid.Column="1" FontSize="Medium" TextColor="Black" Text="{Binding Title}" VerticalOptions="Center" />
+              <Label Grid.Column="2" FontSize="Medium" TextColor="Black" Text="{Binding Price, StringFormat='${0}'}" VerticalOptions="Center" HorizontalOptions="End" />
+              
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>

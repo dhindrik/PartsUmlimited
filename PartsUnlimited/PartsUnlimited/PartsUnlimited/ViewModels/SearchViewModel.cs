@@ -1,5 +1,6 @@
 ﻿using PartsUnlimited.Models;
 using PartsUnlimited.Views;
+using Plugin.Toasts;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -89,12 +90,15 @@ namespace PartsUnlimited.ViewModels
             get
             {
                 return new Command<Product>((product) => {
-                    if(CartViewModel.Products == null)
+                    if(CartViewModel.ProductStore == null)
                     {
-                        CartViewModel.Products = new ObservableCollection<Product>();
+                        CartViewModel.ProductStore = new ObservableCollection<Product>();
                     }
 
-                    CartViewModel.Products.Add(product);
+                    CartViewModel.ProductStore.Add(product);
+
+                    var notificator = DependencyService.Get<IToastNotificator>();
+                    notificator.Notify(ToastNotificationType.Success, string.Format("{0} added to the cart", product.Title), string.Empty, TimeSpan.FromSeconds(1),null,false);
                 });
             }
         }

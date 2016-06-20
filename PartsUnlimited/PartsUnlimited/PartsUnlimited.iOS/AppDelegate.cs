@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Plugin.Toasts;
+using Xamarin.Forms;
 
 namespace PartsUnlimited.iOS
 {
@@ -25,6 +27,9 @@ namespace PartsUnlimited.iOS
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
             LoadApplication(new App());
+
+            DependencyService.Register<ToastNotificatorImplementation>(); 
+            ToastNotificatorImplementation.Init();
 
             UITabBar.Appearance.TintColor = UIColor.Gray;
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(238, 95, 56);

@@ -22,6 +22,34 @@ namespace PartsUnlimited.ViewModels
             }
         }
 
-        public static ObservableCollection<Product> Products { get; set; }
+       
+       
+
+        public static ObservableCollection<Product> ProductStore { get; set; }
+        public ObservableCollection<Product> Products { get; set; }
+
+        public double Total
+        {
+            get
+            {
+                if (Products != null)
+                {
+                    return Products.Sum(x => x.Price); 
+                }
+
+                return 0.0;
+            }
+        }
+
+        public async Task Update()
+        {
+            if (ProductStore != null)
+            {
+                Products = new ObservableCollection<Product>(ProductStore.ToList()); 
+            }
+
+            RaisePropertyChanged("Total");
+            RaisePropertyChanged("Products");
+        }
     }
 }
