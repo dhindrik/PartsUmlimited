@@ -18,12 +18,12 @@
                 <ColumnDefinition Width="40" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="60" />
-                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="60" />
               </Grid.ColumnDefinitions>
                 <Image WidthRequest="40" Aspect="AspectFill" HeightRequest="40" Source="{Binding Image}" />
                 <Label Grid.Column="1" FontSize="Medium" TextColor="Black" Text="{Binding Title}" VerticalOptions="Center" />
                 <Label Grid.Column="2" FontSize="Medium" TextColor="Black" Text="{Binding Price, StringFormat='${0}'}" VerticalOptions="Center" HorizontalOptions="End" />
-                 <Button Grid.Column="3" Text="Buy" HorizontalOptions="End" Command="{Binding Buy}" CommandParameter="{Binding }" />
+                 <Button Grid.Column="3" Text="Buy" BackgroundColor="Transparent" TextColor="Green" HorizontalOptions="End" Command="{Binding Buy}" CommandParameter="{Binding }" />
              </Grid>
           </ViewCell>
         </DataTemplate>

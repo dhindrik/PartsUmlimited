@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>6.0</string>
+	<string>9.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>PartsUnlimited</string>
 	<key>CFBundleIdentifier</key>
@@ -37,6 +37,6 @@
 	<key>CFBundleShortVersionString</key>
 	<string></string>
   <key>NSLocationAlwaysUsageDescription</key>
-  <string>We need your position</string>
+  <string></string>
 </dict>
 </plist>

@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
+using Xamarin;
 
 namespace PartsUnlimited.Droid
 {
@@ -20,7 +21,8 @@ namespace PartsUnlimited.Droid
         {
             base.OnCreate();
             RegisterActivityLifecycleCallbacks(this);
-            //A great place to initialize Xamarin.Insights and Dependency Services!
+
+            Insights.Initialize("e5ec1fda54cb302d05a3cec7c65b6e98a14402ce", Context);
         }
 
         public override void OnTerminate()

@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using Plugin.Toasts;
 using Xamarin.Forms;
+using HockeyApp;
 
 namespace PartsUnlimited.iOS
 {
@@ -24,6 +25,10 @@ namespace PartsUnlimited.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            var manager = BITHockeyManager.SharedHockeyManager;
+            manager.Configure("f5ec309128ea41d59857c180c967c9db");
+            manager.StartManager();
+
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
             LoadApplication(new App());
