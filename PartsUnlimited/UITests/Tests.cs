@@ -24,16 +24,31 @@ namespace UITests
             app = AppInitializer.StartApp(platform);
         }
 
-        [Test]
-        public void AppLaunches()
+      
+           [Test]
+        public void SearchAndBuy()
         {
-            app.Tap(x => x.ClassFull("android.widget.SearchView$SearchAutoComplete").Id("search_src_text"));
-            app.Screenshot("Tapped on view SearchView$SearchAutoComplete with ID: 'search_src_text'");
-            app.EnterText(x => x.ClassFull("android.widget.SearchView$SearchAutoComplete").Id("search_src_text"), "plå");
-            app.Screenshot("Entered 'plå' into view SearchView$SearchAutoComplete with ID: 'search_src_text'");
-            app.Tap(x => x.Class("ImageView").Id("search_close_btn"));
-            app.Screenshot("Tapped on view ImageView with ID: 'search_close_btn'");
+            app.Tap(x => x.Id("search_src_text"));
+            app.Screenshot("Tapped on view with class: SearchView$SearchAutoComplete marked: Search query");
+            app.EnterText(x => x.Id("search_src_text"), "alu");
+            app.Tap(x => x.Text("Aluminum rim 14\""));
+            app.Screenshot("Tapped on view with class: FormsTextView");
+            app.Tap(x => x.Text("Buy"));
+            app.Screenshot("Tapped on view with class: Button");
+            app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
+            app.Screenshot("Tapped on view with class: ScrollingTabContainerView$TabView");
+            app.Tap(x => x.Text("Search"));
+            app.Screenshot("Tapped on view with class: TextView");
+            app.Tap(x => x.Text("Buy").Index(2));
+            app.Screenshot("Tapped on view with class: Button");
+            app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
+            app.Screenshot("Tapped on view with class: ScrollingTabContainerView$TabView");
+            app.Tap(x => x.Marked("Clear"));
+            app.Screenshot("Tapped on view with class: ActionMenuItemView marked: Clear");
+            app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
         }
+
     }
+}
 }
 
