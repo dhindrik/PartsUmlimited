@@ -39,6 +39,10 @@ namespace PartsUnlimited.iOS
             UITabBar.Appearance.TintColor = UIColor.Gray;
             UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(238, 95, 56);
 
+            #if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+            #endif
+
             return base.FinishedLaunching(app, options);
         }
     }
