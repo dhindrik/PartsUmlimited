@@ -43,9 +43,7 @@ namespace UITests
             app.Screenshot("Tapped on view with class: Button");
             app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
             app.Screenshot("Tapped on view with class: ScrollingTabContainerView$TabView");
-            app.Tap(x => x.Marked("Clear"));
-            app.Screenshot("Tapped on view with class: ActionMenuItemView marked: Clear");
-            app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
+           
         }
 
     }
