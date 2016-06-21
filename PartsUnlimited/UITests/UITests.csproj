@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iOSTests.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
   </ItemGroup>
@@ -62,12 +63,6 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PartsUnlimited\PartsUnlimited.Droid\PartsUnlimited.Droid.csproj">
-      <Project>{e393237e-4920-4aa9-b8f9-1264fbfe9cd1}</Project>
-      <Name>PartsUnlimited.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
