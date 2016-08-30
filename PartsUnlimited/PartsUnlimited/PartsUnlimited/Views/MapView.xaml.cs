@@ -35,7 +35,7 @@ namespace PartsUnlimited.Views
 
             if(!_hasPosition)
             {
-                var position = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
+                //var position = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
                 
                 Map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(60.48322, 15.40938), Distance.FromKilometers(3)));
 

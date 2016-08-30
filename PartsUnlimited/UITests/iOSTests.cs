@@ -28,7 +28,7 @@ namespace UITests
            [Test]
         public void SearchAndBuy()
         {
-           
+            
             app.Screenshot("Search");
             
             app.Tap(x => x.Text("Aluminum rim 14\""));
