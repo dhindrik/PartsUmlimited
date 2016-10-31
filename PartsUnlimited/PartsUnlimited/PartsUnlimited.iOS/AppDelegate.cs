@@ -31,6 +31,17 @@ namespace PartsUnlimited.iOS
 
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
+
+#if ENABLE_TEST_CLOUD
+            Xamarin.Forms.Forms.ViewInitialized += (sender, e) =>
+            {
+                if (null != e.View.StyleId)
+                {
+                    e.NativeView.AccessibilityIdentifier = e.View.StyleId;
+                }
+            };
+#endif
+
             LoadApplication(new App());
 
             DependencyService.Register<ToastNotificatorImplementation>(); 

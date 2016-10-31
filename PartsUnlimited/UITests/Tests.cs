@@ -46,6 +46,18 @@ namespace UITests
            
         }
 
+        [Test]
+        public void NewTest()
+        {
+            app.Tap(x => x.ClassFull("com.android.internal.widget.ScrollingTabContainerView$TabView").Index(1));
+            app.Tap(x => x.Text("Search"));
+            app.Tap(x => x.Id("search_src_text"));
+            app.EnterText(x => x.Id("search_src_text"), "steel");
+            app.Tap(x => x.Text("Buy"));
+            app.Tap(x => x.Text("Buy").Index(1));
+        }
+
+
     }
 }
 

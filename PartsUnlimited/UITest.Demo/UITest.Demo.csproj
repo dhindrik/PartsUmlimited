@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95D3A0B2-30E4-4C97-8946-FCDB8DC86355}</ProjectGuid>
+    <ProjectGuid>{8724107F-BA4C-4D3A-90C5-83983C7ED64A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>UITests</RootNamespace>
-    <AssemblyName>UITests</AssemblyName>
+    <RootNamespace>UITest.Demo</RootNamespace>
+    <AssemblyName>UITest.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -59,12 +59,7 @@
     <Compile Include="AppInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

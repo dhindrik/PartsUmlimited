@@ -5,16 +5,16 @@ using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
-namespace UITests
+namespace UITest.Demo
 {
+    [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
-
-    public class iOSTests
+    public class Tests
     {
         IApp app;
         Platform platform;
 
-        public iOSTests(Platform platform)
+        public Tests(Platform platform)
         {
             this.platform = platform;
         }
@@ -25,23 +25,11 @@ namespace UITests
             app = AppInitializer.StartApp(platform);
         }
 
-      
-           [Test]
-        public void SearchAndBuy()
+        [Test]
+        public void AppLaunches()
         {
-            
-            app.Screenshot("Search");
-            
-            app.Tap(x => x.Text("Aluminum rim 14\""));
-          
-            app.Tap(x => x.Text("Buy"));
-           
-            app.Tap(x => x.Text("Cart"));
-            app.Screenshot("Cart");
-           
+            app.Screenshot("First screen.");
         }
-
     }
 }
-
 

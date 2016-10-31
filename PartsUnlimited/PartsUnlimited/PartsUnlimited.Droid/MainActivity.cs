@@ -27,7 +27,15 @@ namespace PartsUnlimited.Droid
             ToastNotificatorImplementation.Init(this);
 
             Xamarin.FormsMaps.Init(this, bundle);
-
+#if ENABLE_TEST_CLOUD
+            Xamarin.Forms.Forms.ViewInitialized += (object sender, Xamarin.Forms.ViewInitializedEventArgs e) =>
+            {
+                if (!string.IsNullOrWhiteSpace(e.View.StyleId))
+                {
+                    e.NativeView.ContentDescription = e.View.StyleId;
+                }
+            };
+#endif  
             ActionBar.SetIcon(new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
         }
     }
