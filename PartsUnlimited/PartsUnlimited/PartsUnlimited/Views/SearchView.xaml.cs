@@ -1,4 +1,5 @@
 ﻿using PartsUnlimited.ViewModels;
+using Plugin.Toasts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace PartsUnlimited.Views
             NavigationPage.SetBackButtonTitle(this, "");
 
             ViewModel.Navigation = Navigation;
+
+            SearchViewModel.Notify = (message) =>
+            {
+                var notificator = DependencyService.Get<IToastNotificator>();
+                notificator.Notify(ToastNotificationType.Success, message, string.Empty, TimeSpan.FromSeconds(1), null, false);
+            };
         }
 
         public void Product_Selected(object sender, EventArgs e)

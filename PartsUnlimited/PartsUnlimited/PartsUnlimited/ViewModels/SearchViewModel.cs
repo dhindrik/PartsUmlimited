@@ -97,11 +97,17 @@ namespace PartsUnlimited.ViewModels
 
                     CartViewModel.ProductStore.Add(product);
 
-                    var notificator = DependencyService.Get<IToastNotificator>();
-                    notificator.Notify(ToastNotificationType.Success, string.Format("{0} added to the cart", product.Title), string.Empty, TimeSpan.FromSeconds(1),null,false);
+                    if(Notify != null)
+                    {
+                        Notify(string.Format("{0} added to the cart", product.Title));
+                    }
+
+                    
                 });
             }
         }
+
+        public static Action<string> Notify { get; set; }
 
 
     }
