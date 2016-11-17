@@ -33,7 +33,9 @@ namespace PartsUnlimited.Views
         {
             base.OnAppearing();
 
-            if(!_hasPosition)
+            HockeyApp.MetricsManager.TrackEvent("MapView");
+
+            if (!_hasPosition)
             {
                 //var position = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
                 

@@ -12,6 +12,12 @@ namespace UITests
         {
             if (platform == Platform.Android)
             {
+#if DEBUG
+                return ConfigureApp
+                    .Android.ApkFile(@"..\..\..\PartsUnlimited\PartsUnlimited.Droid\bin\Release\sogeti.demo.partsunlimited.apk")
+                    .StartApp();
+#endif
+
                 return ConfigureApp
                     .Android
                     .StartApp();

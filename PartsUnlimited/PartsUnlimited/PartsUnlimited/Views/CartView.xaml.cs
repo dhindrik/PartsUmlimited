@@ -41,11 +41,17 @@ namespace PartsUnlimited.Views
             {
                 await ViewModel.Update();
             }
+
+
+
+            HockeyApp.MetricsManager.TrackEvent("CartView");
         }
 
         public void Product_Selected(object sender, EventArgs e)
         {
             List.SelectedItem = null;
         }
+
+        
     }
 }

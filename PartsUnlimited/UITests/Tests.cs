@@ -57,6 +57,15 @@ namespace UITests
             app.Tap(x => x.Text("Buy").Index(1));
         }
 
+        [Test]
+        public void DemoTest()
+        {
+            app.Repl();
+
+            app.Tap(x => x.Marked("search_bar"));
+            app.Screenshot("First page");
+        }
+
 
     }
 }
